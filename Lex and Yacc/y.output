@@ -1,0 +1,966 @@
+   0  $accept : session $end
+
+   1  session :
+   2          | session toplevel '\n'
+
+   3  toplevel : expr
+   4           | '?'
+   5           | '.'
+
+   6  expr : NUMBER
+   7       | NAME
+   8       | '=' NAME expr
+   9       | expr EQ expr
+  10       | '+' expr expr
+  11       | '-' expr expr
+  12       | '*' expr expr
+  13       | '/' expr expr
+  14       | '~' expr
+  15       | '(' expr ')'
+  16       | '<' expr expr
+  17       | '>' expr expr
+  18       | AND expr expr
+  19       | OR expr expr
+  20       | NOT expr
+  21       | IF expr expr expr
+
+state 0
+	$accept : . session $end  (0)
+	session : .  (1)
+
+	.  reduce 1
+
+	session  goto 1
+
+
+state 1
+	$accept : session . $end  (0)
+	session : session . toplevel '\n'  (2)
+
+	$end  accept
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'?'  shift 13
+	'.'  shift 14
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 19
+	toplevel  goto 20
+
+
+state 2
+	expr : NAME .  (7)
+
+	.  reduce 7
+
+
+state 3
+	expr : NUMBER .  (6)
+
+	.  reduce 6
+
+
+state 4
+	expr : AND . expr expr  (18)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 21
+
+
+state 5
+	expr : OR . expr expr  (19)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 22
+
+
+state 6
+	expr : NOT . expr  (20)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 23
+
+
+state 7
+	expr : IF . expr expr expr  (21)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 24
+
+
+state 8
+	expr : '=' . NAME expr  (8)
+
+	NAME  shift 25
+	.  error
+
+
+state 9
+	expr : '-' . expr expr  (11)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 26
+
+
+state 10
+	expr : '+' . expr expr  (10)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 27
+
+
+state 11
+	expr : '*' . expr expr  (12)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 28
+
+
+state 12
+	expr : '/' . expr expr  (13)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 29
+
+
+state 13
+	toplevel : '?' .  (4)
+
+	.  reduce 4
+
+
+state 14
+	toplevel : '.' .  (5)
+
+	.  reduce 5
+
+
+state 15
+	expr : '~' . expr  (14)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 30
+
+
+state 16
+	expr : '(' . expr ')'  (15)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 31
+
+
+state 17
+	expr : '<' . expr expr  (16)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 32
+
+
+state 18
+	expr : '>' . expr expr  (17)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 33
+
+
+state 19
+	toplevel : expr .  (3)
+	expr : expr . EQ expr  (9)
+
+	EQ  shift 34
+	'\n'  reduce 3
+
+
+state 20
+	session : session toplevel . '\n'  (2)
+
+	'\n'  shift 35
+	.  error
+
+
+state 21
+	expr : expr . EQ expr  (9)
+	expr : AND expr . expr  (18)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 36
+
+
+state 22
+	expr : expr . EQ expr  (9)
+	expr : OR expr . expr  (19)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 37
+
+
+23: shift/reduce conflict (shift 34, reduce 20) on EQ
+state 23
+	expr : expr . EQ expr  (9)
+	expr : NOT expr .  (20)
+
+	EQ  shift 34
+	NAME  reduce 20
+	NUMBER  reduce 20
+	AND  reduce 20
+	OR  reduce 20
+	NOT  reduce 20
+	IF  reduce 20
+	'='  reduce 20
+	'-'  reduce 20
+	'+'  reduce 20
+	'*'  reduce 20
+	'/'  reduce 20
+	'\n'  reduce 20
+	'~'  reduce 20
+	'('  reduce 20
+	')'  reduce 20
+	'<'  reduce 20
+	'>'  reduce 20
+
+
+state 24
+	expr : expr . EQ expr  (9)
+	expr : IF expr . expr expr  (21)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 38
+
+
+state 25
+	expr : '=' NAME . expr  (8)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 39
+
+
+state 26
+	expr : expr . EQ expr  (9)
+	expr : '-' expr . expr  (11)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 40
+
+
+state 27
+	expr : expr . EQ expr  (9)
+	expr : '+' expr . expr  (10)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 41
+
+
+state 28
+	expr : expr . EQ expr  (9)
+	expr : '*' expr . expr  (12)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 42
+
+
+state 29
+	expr : expr . EQ expr  (9)
+	expr : '/' expr . expr  (13)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 43
+
+
+30: shift/reduce conflict (shift 34, reduce 14) on EQ
+state 30
+	expr : expr . EQ expr  (9)
+	expr : '~' expr .  (14)
+
+	EQ  shift 34
+	NAME  reduce 14
+	NUMBER  reduce 14
+	AND  reduce 14
+	OR  reduce 14
+	NOT  reduce 14
+	IF  reduce 14
+	'='  reduce 14
+	'-'  reduce 14
+	'+'  reduce 14
+	'*'  reduce 14
+	'/'  reduce 14
+	'\n'  reduce 14
+	'~'  reduce 14
+	'('  reduce 14
+	')'  reduce 14
+	'<'  reduce 14
+	'>'  reduce 14
+
+
+state 31
+	expr : expr . EQ expr  (9)
+	expr : '(' expr . ')'  (15)
+
+	EQ  shift 34
+	')'  shift 44
+	.  error
+
+
+state 32
+	expr : expr . EQ expr  (9)
+	expr : '<' expr . expr  (16)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 45
+
+
+state 33
+	expr : expr . EQ expr  (9)
+	expr : '>' expr . expr  (17)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 46
+
+
+state 34
+	expr : expr EQ . expr  (9)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 47
+
+
+state 35
+	session : session toplevel '\n' .  (2)
+
+	.  reduce 2
+
+
+36: shift/reduce conflict (shift 34, reduce 18) on EQ
+state 36
+	expr : expr . EQ expr  (9)
+	expr : AND expr expr .  (18)
+
+	EQ  shift 34
+	NAME  reduce 18
+	NUMBER  reduce 18
+	AND  reduce 18
+	OR  reduce 18
+	NOT  reduce 18
+	IF  reduce 18
+	'='  reduce 18
+	'-'  reduce 18
+	'+'  reduce 18
+	'*'  reduce 18
+	'/'  reduce 18
+	'\n'  reduce 18
+	'~'  reduce 18
+	'('  reduce 18
+	')'  reduce 18
+	'<'  reduce 18
+	'>'  reduce 18
+
+
+37: shift/reduce conflict (shift 34, reduce 19) on EQ
+state 37
+	expr : expr . EQ expr  (9)
+	expr : OR expr expr .  (19)
+
+	EQ  shift 34
+	NAME  reduce 19
+	NUMBER  reduce 19
+	AND  reduce 19
+	OR  reduce 19
+	NOT  reduce 19
+	IF  reduce 19
+	'='  reduce 19
+	'-'  reduce 19
+	'+'  reduce 19
+	'*'  reduce 19
+	'/'  reduce 19
+	'\n'  reduce 19
+	'~'  reduce 19
+	'('  reduce 19
+	')'  reduce 19
+	'<'  reduce 19
+	'>'  reduce 19
+
+
+state 38
+	expr : expr . EQ expr  (9)
+	expr : IF expr expr . expr  (21)
+
+	NAME  shift 2
+	NUMBER  shift 3
+	EQ  shift 34
+	AND  shift 4
+	OR  shift 5
+	NOT  shift 6
+	IF  shift 7
+	'='  shift 8
+	'-'  shift 9
+	'+'  shift 10
+	'*'  shift 11
+	'/'  shift 12
+	'~'  shift 15
+	'('  shift 16
+	'<'  shift 17
+	'>'  shift 18
+	.  error
+
+	expr  goto 48
+
+
+39: shift/reduce conflict (shift 34, reduce 8) on EQ
+state 39
+	expr : '=' NAME expr .  (8)
+	expr : expr . EQ expr  (9)
+
+	EQ  shift 34
+	NAME  reduce 8
+	NUMBER  reduce 8
+	AND  reduce 8
+	OR  reduce 8
+	NOT  reduce 8
+	IF  reduce 8
+	'='  reduce 8
+	'-'  reduce 8
+	'+'  reduce 8
+	'*'  reduce 8
+	'/'  reduce 8
+	'\n'  reduce 8
+	'~'  reduce 8
+	'('  reduce 8
+	')'  reduce 8
+	'<'  reduce 8
+	'>'  reduce 8
+
+
+state 40
+	expr : expr . EQ expr  (9)
+	expr : '-' expr expr .  (11)
+
+	.  reduce 11
+
+
+state 41
+	expr : expr . EQ expr  (9)
+	expr : '+' expr expr .  (10)
+
+	.  reduce 10
+
+
+state 42
+	expr : expr . EQ expr  (9)
+	expr : '*' expr expr .  (12)
+
+	.  reduce 12
+
+
+state 43
+	expr : expr . EQ expr  (9)
+	expr : '/' expr expr .  (13)
+
+	.  reduce 13
+
+
+state 44
+	expr : '(' expr ')' .  (15)
+
+	.  reduce 15
+
+
+45: shift/reduce conflict (shift 34, reduce 16) on EQ
+state 45
+	expr : expr . EQ expr  (9)
+	expr : '<' expr expr .  (16)
+
+	EQ  shift 34
+	NAME  reduce 16
+	NUMBER  reduce 16
+	AND  reduce 16
+	OR  reduce 16
+	NOT  reduce 16
+	IF  reduce 16
+	'='  reduce 16
+	'-'  reduce 16
+	'+'  reduce 16
+	'*'  reduce 16
+	'/'  reduce 16
+	'\n'  reduce 16
+	'~'  reduce 16
+	'('  reduce 16
+	')'  reduce 16
+	'<'  reduce 16
+	'>'  reduce 16
+
+
+46: shift/reduce conflict (shift 34, reduce 17) on EQ
+state 46
+	expr : expr . EQ expr  (9)
+	expr : '>' expr expr .  (17)
+
+	EQ  shift 34
+	NAME  reduce 17
+	NUMBER  reduce 17
+	AND  reduce 17
+	OR  reduce 17
+	NOT  reduce 17
+	IF  reduce 17
+	'='  reduce 17
+	'-'  reduce 17
+	'+'  reduce 17
+	'*'  reduce 17
+	'/'  reduce 17
+	'\n'  reduce 17
+	'~'  reduce 17
+	'('  reduce 17
+	')'  reduce 17
+	'<'  reduce 17
+	'>'  reduce 17
+
+
+state 47
+	expr : expr . EQ expr  (9)
+	expr : expr EQ expr .  (9)
+
+	EQ  shift 34
+	NAME  reduce 9
+	NUMBER  reduce 9
+	AND  reduce 9
+	OR  reduce 9
+	NOT  reduce 9
+	IF  reduce 9
+	'='  reduce 9
+	'-'  reduce 9
+	'+'  reduce 9
+	'*'  reduce 9
+	'/'  reduce 9
+	'\n'  reduce 9
+	'~'  reduce 9
+	'('  reduce 9
+	')'  reduce 9
+	'<'  reduce 9
+	'>'  reduce 9
+
+
+48: shift/reduce conflict (shift 34, reduce 21) on EQ
+state 48
+	expr : expr . EQ expr  (9)
+	expr : IF expr expr expr .  (21)
+
+	EQ  shift 34
+	NAME  reduce 21
+	NUMBER  reduce 21
+	AND  reduce 21
+	OR  reduce 21
+	NOT  reduce 21
+	IF  reduce 21
+	'='  reduce 21
+	'-'  reduce 21
+	'+'  reduce 21
+	'*'  reduce 21
+	'/'  reduce 21
+	'\n'  reduce 21
+	'~'  reduce 21
+	'('  reduce 21
+	')'  reduce 21
+	'<'  reduce 21
+	'>'  reduce 21
+
+
+State 23 contains 1 shift/reduce conflict.
+State 30 contains 1 shift/reduce conflict.
+State 36 contains 1 shift/reduce conflict.
+State 37 contains 1 shift/reduce conflict.
+State 39 contains 1 shift/reduce conflict.
+State 45 contains 1 shift/reduce conflict.
+State 46 contains 1 shift/reduce conflict.
+State 48 contains 1 shift/reduce conflict.
+
+
+23 terminals, 4 nonterminals
+22 grammar rules, 49 states

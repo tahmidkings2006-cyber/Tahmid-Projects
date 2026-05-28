@@ -1,0 +1,187 @@
+
+"""
+File:    py_uno.py
+Author:  Tahmid Khan
+Date:    04/22/2025
+Section: 16
+E-mail:  tahmidk1@umbc.edu
+Description:
+A game of uno written python, with 2 players.
+	"""
+"""
+YOUR PROJECT DOCUMENTATION GOES HERE - remove or replace this comment
+"""
+
+import random
+
+COLORS = ['Red', 'Green', 'Blue', 'Yellow']
+CARD_COLOR = 'color'
+CARD_NUMBER = 'number'
+CARD_SPECIAL = 'special'
+COLOR_SPECIALS = ['Skip', 'DrawTwo']
+WILD_SPECIALS = ['Wild', 'WildDrawFour']
+
+
+def create_deck():
+    deck = [
+        {CARD_COLOR: the_color,
+         CARD_NUMBER: i % 10,
+         CARD_SPECIAL: ''
+         }
+        for i in range(20)
+        for the_color in COLORS
+    ]
+    for special in COLOR_SPECIALS:
+        for the_color in COLORS:
+            special_card = {
+                CARD_COLOR: the_color,
+                CARD_NUMBER: -1,
+                CARD_SPECIAL: special
+            }
+            deck.append(dict(special_card))
+            deck.append(dict(special_card))
+    for special in WILD_SPECIALS:
+        special_card = {
+            CARD_COLOR: '',
+            CARD_NUMBER: -1,
+            CARD_SPECIAL: special
+        }
+        for i in range(4):
+            deck.append(dict(special_card))
+
+    return deck
+
+"""
+Your code should go here.   - Remove or replace this comment.
+"""
+#The function below is used to display the cards in the player's hand.
+def display_hand(hand):
+    return' '.join(format_card(card)for card in hand)
+
+#The function below is used to format the cards in the player's hand.
+def format_card(card):
+    if card[CARD_SPECIAL]:
+        # If the card is a special card, return the special card name.
+        if card[CARD_SPECIAL] in WILD_SPECIALS:
+            return card[CARD_SPECIAL]
+        # If the card is a color special card, return the color and special card name.
+        return card[CARD_COLOR] + card[CARD_SPECIAL]
+    return f"{card[CARD_COLOR]}{card[CARD_NUMBER]}"    
+
+def is_playable(card, top_card):
+    # Check if the card is playable on the top card.
+    if card[CARD_SPECIAL] in WILD_SPECIALS:
+        return True
+    if top_card[CARD_SPECIAL] == card[CARD_SPECIAL] and card[CARD_SPECIAL] != '':
+        return True
+    if card[CARD_COLOR] == top_card[CARD_COLOR]:
+        return True
+    if card[CARD_NUMBER] != - 1 and card[CARD_NUMBER] == top_card[CARD_NUMBER]:
+        return True
+    # If the card is not playable, return False.
+    return False    
+
+#The function below is used to play the game.
+def play_game():
+    deck = create_deck()
+    random.shuffle(deck)
+    # Deal 7 cards to each player and set up the draw and discard piles.
+    player1 = deck[0:7]
+    player2 = deck[7:14]
+    draw_pile = deck[14:]
+    discard_pile = [draw_pile[0]]
+    del draw_pile[0]
+    # Set up the turn counter.
+    turn = 0  
+
+    while True:
+        # Determine the current player.       
+        current_player = player1 if turn % 2 == 0 else player2
+
+        print(display_hand(current_player))
+        print(f"The top card is:  {format_card(discard_pile[-1])}")
+        # Ask the current player what they want to do.
+        action = input(f"Player {turn%2 + 1} what would you like to do? ").strip()
+        # If the player wants to draw a card, draw a card from the draw pile.
+        if action == "draw":
+            if len(draw_pile) == 0:
+                print("The draw pile is empty. The game ends in a tie.")
+                return
+            drawn_card = draw_pile[0]
+            del draw_pile[0]
+            current_player.append(drawn_card)
+
+            # If the drawn card is playable, ask the player if they want to play it.
+        else:
+            card_found = False
+            matched_card = {}
+            for card in current_player:
+                if format_card(card) == action:
+                    matched_card = card
+                    card_found = True
+            # If the card is not in the player's hand, print an error message.
+            if not card_found:
+                print("That card is not in your hand.")
+            else:
+                top_card = discard_pile[-1]
+                if not is_playable(matched_card, top_card):
+                    print("That card didn't match in number or color.")
+                else:
+                    if matched_card[CARD_SPECIAL] in WILD_SPECIALS :
+                        color_choice = input("Select a color [Blue, Red, Green, Yellow] ").strip()
+                        matched_card[CARD_COLOR] = color_choice
+                        # If the card is a WildDrawFour card, draw 4 cards for the next player.
+                        if matched_card[CARD_SPECIAL] == 'WildDrawFour':
+                            if turn % 2 == 0:
+                                next_player = player2
+                            else:
+                                next_player = player1
+                            for i in range(4):  
+                                if draw_pile:
+                                    card = draw_pile[0]
+                                    del draw_pile[0]
+                                    next_player.append(card)
+                            turn += 1  
+                        # If the card is a Wild card, skip the next player's turn and also ask for a color.
+                        elif matched_card[CARD_SPECIAL] == 'Wild':
+                            if turn % 2 == 0:
+                                next_player = player2
+                            else:
+                                next_player = player1
+                            turn += 1    
+                    # If the card is a DrawTwo card, draw 2 cards for the next player.
+                    if matched_card[CARD_SPECIAL] == 'DrawTwo':
+                        if turn % 2 == 0:
+                            next_player = player2
+                        else:
+                            next_player = player1
+                        for i in range(2):  
+                                if draw_pile:
+                                    card = draw_pile[0]
+                                    del draw_pile[0]
+                                    next_player.append(card)    
+                   # If the card is a Skip card, skip the next player's turn.
+                    elif matched_card[CARD_SPECIAL] == 'Skip':
+                        turn += 1  
+
+                    discard_pile.append(matched_card)
+                    current_player.remove(matched_card)  
+
+                    # After playing a card, check if the current player won
+                    if len(current_player) == 0:
+                        print("Congratulations Player " + str(turn % 2 + 1) + "! You Won!")
+                        return
+
+                    turn += 1 
+
+        print("The top card is: ", format_card(discard_pile[-1]))
+
+        # If draw pile is empty during turn, game ends
+        if len(draw_pile) == 0:
+            print("The draw pile is empty. The game ends in a tie.")
+            return
+
+if __name__ == '__main__':
+    the_seed = input('What seed do you want to use for the game? ')
+    random.seed(the_seed)
+    play_game()  

@@ -1,0 +1,362 @@
+//Title: Queue.cpp
+//Author: Tahmid Khan
+//Date: 11/10/2025
+//Description: Describes the templated class Queue
+
+#ifndef QUEUE_CPP
+#define QUEUE_CPP
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <type_traits>
+
+using namespace std;
+
+//Templated linked list
+//Note: Because the linked list is a templated class,
+//      there is only ONE file (Queue.cpp)
+
+//Templated node class
+template <class T>
+class Node {
+public:
+  Node( const T& data ); //Constructor
+  T GetData(); //Gets data from node
+  void SetData( const T& data ); //Sets data in node
+  Node<T>* GetNext(); //Gets next pointer
+  void SetNext( Node<T>* next ); //Sets next pointer
+private:
+  T m_data;
+  Node<T>* m_next;
+};
+
+//Overloaded constructor for Node
+template <class T>
+Node<T>::Node( const T& data ) {
+   m_data = data;
+   m_next = nullptr;
+}
+
+template <class T>
+T Node<T>::GetData() {
+  return m_data;
+}
+
+//Sets the data in a Node
+template <class T>
+void Node<T>::SetData( const T& data ) {
+   m_data = data;
+}
+
+//Gets the pointer to the next Node
+template <class T>
+Node<T>* Node<T>::GetNext() {
+   return m_next;
+}
+
+//Sets the next Node
+template <class T>
+void Node<T>::SetNext( Node<T>* next ) {
+   m_next = next;
+}
+
+template <class T>
+class Queue {
+ public:
+  // Name: Queue() Queue from a linked list - Default Constructor
+  // Desc: Used to build a new linked queue (as a linked list)
+  // Preconditions: None
+  // Postconditions: Creates a new queue where m_head and m_tail
+  //                 point to nullptr and m_size = 0
+  Queue();
+  // Name: ~Queue() - Destructor
+  // Desc: Used to destruct a Queue
+  // Preconditions: There is a Queue
+  // Postconditions: Queue is deallocated (including dynamically allocated nodes)
+  //                 Can just call Clear()
+ ~Queue();
+  // Name: Queue (Copy Constructor)
+  // Preconditions: Creates a copy of existing Queue in separate memory
+  //                address (deep copy)
+  //                Requires one already existing Queue
+  // Postconditions: Copy of existing Queue
+  Queue(const Queue&);
+  // Name: operator= (Overloaded Assignment Operator)
+  // Preconditions: When two Queue objects exist, sets one to equal another
+  //                Requires two Queue objects
+  // Postconditions: When completed, you have two Queues in
+  //                 separate memory addresses with the same
+  //                 number of nodes with the same values in each node
+  Queue<T>& operator= (Queue&);
+  // Name: PushBack
+  // Preconditions: Takes in data. Creates new node. 
+  //                Requires a Queue
+  // Postconditions: Adds a new node to the end of the Queue.
+  void PushBack(const T&);
+  // Name: PopFront
+  // Preconditions: Queue with at least one node. 
+  // Postconditions: Removes first node in the queue and
+  //                 returns the data in the first node
+  T PopFront();
+  // Name: Display
+  // Preconditions: Outputs the queue.
+  // Postconditions: Displays the data in each node of queue
+  // Required (used only for queue testing)
+  void Display();
+  // Name: Front
+  // Preconditions: Requires a Queue with at least one node
+  // Postconditions: Returns whatever data is pointed at by m_head -
+  //                 Does NOT remove node
+  T Front();
+  // Name: IsEmpty
+  // Preconditions: Requires a queue
+  // Postconditions: Returns if the queue is empty.
+  bool IsEmpty();
+  // Name: GetSize
+  // Preconditions: Requires a queue
+  // Postconditions: Returns m_size
+  int GetSize();
+  // Name: Find()
+  // Preconditions: Requires a queue
+  // Postconditions: Iterates and if it finds the thing, returns index, else -1
+  int Find(T);
+  // Name: Clear
+  // Preconditions: Requires a queue
+  // Postconditions: Deallocates and removes all nodes in a queue. No memory leaks
+  void Clear();
+  // Name: At
+  // Precondition: Existing Queue
+  // Postcondition: Returns object from Queue at a specific location
+  // Desc: Iterates to node x and returns data from Queue
+  T At (int x);
+  // Name: Swap(int)
+  // Preconditions: Requires a queue
+  // Postconditions: Swaps the nodes at the index with the node prior to it.
+  // Example: Swap(1) would swap the node 0 with node 1 so
+  //          that node 1 would now be m_head
+  // Desc: Swaps two nodes by updating the pointers (not just the value)
+  // Hint: Think about the special cases! Implement before Sort
+  void Swap(int);
+  // Name: Sort()
+  // Preconditions: Requires a queue with a minimum of 2 nodes
+  //                (otherwise notifies user)
+  // Postconditions: Sorts the Queue (uses overloaded <).
+  // Desc: This is used to sort anything in the Queue assuming the
+  //       < is overloaded
+  //       Uses bubble sort and Swap function above.
+  //       Ensure working with queue_test before rest of project.
+  void Sort();
+private:
+  Node <T> *m_head; //Node pointer for the head
+  Node <T> *m_tail; //Node pointer for the tail
+  int m_size; //Number of nodes in queue
+};
+
+//**********Implement Queue Class Here***********
+//**********All Functions Are Required Even If Not Used for Project**************
+//**********No references to anything from Song/SongPlayer here*****************
+//Sets the head and tail to nullptr and size to 0
+template <class T>
+Queue<T>::Queue() {
+  m_head = nullptr;
+  m_tail = nullptr;
+  m_size = 0;
+}
+
+//Deletes all nodes in the queue
+template <class T>
+Queue<T>::~Queue() {
+  Clear();
+}
+
+//Copies the queue
+template<class T> 
+Queue<T>::Queue(const Queue<T>& rhs) {
+  m_head = nullptr;
+  m_tail = nullptr;
+  m_size = 0;
+  Node<T>* curr = rhs.m_head;
+  //Copies the queue while the current node is not nullptr
+  while(curr != nullptr) {
+    PushBack(curr->GetData());
+    curr = curr->GetNext();
+  }
+}
+
+//Assigns the queue to the right hand side
+template <class T>
+Queue<T>& Queue<T>::operator=(Queue<T>& rhs) {
+  if (this != &rhs) {
+    Clear();
+    //Copies the queue while the current node is not nullptr
+    Node<T>* curr = rhs.m_head;
+    while(curr != nullptr) {
+      PushBack(curr->GetData());
+      curr = curr->GetNext();
+    }
+  }
+   return *this;
+}
+
+//Pushes the data to the back of the queue
+template <class T>
+void Queue<T>::PushBack(const T& data) {
+  //Creates a new node with the data
+  Node<T>* newNode = new Node<T>(data);
+  if(m_head == nullptr) {
+    m_head = m_tail = newNode;
+  } else {
+   //Sets the next node of the tail to the new node and sets the tail to the new node
+    m_tail -> SetNext(newNode);
+    m_tail = newNode;
+  }
+  m_size++;
+  }
+
+//Pops the front of the queue and returns the data
+template <class T> 
+T Queue<T>::PopFront(){
+  Node<T>* temp = m_head;
+  T data = temp->GetData();
+  m_head = m_head->GetNext();
+  //If the head is nullptr, sets the tail to nullptr
+  if(m_head == nullptr) {
+    m_tail = nullptr;
+  }
+  delete temp;
+  m_size--;
+  return data;
+}
+
+//Displays the queue
+template <class T>
+void  Queue<T>::Display() {
+  Node<T>* curr = m_head;
+  while (curr != nullptr) {
+    if constexpr (std::is_pointer<T>::value) {
+      // If T is Song*, print the Song itself
+      std::cout << *curr->GetData() << std::endl;
+    } else {
+      // If T is a value type (like Song), print normally
+      std::cout << curr->GetData() << std::endl;
+    }
+    curr = curr->GetNext();
+}
+}
+
+//Returns the data of the front of the queue
+template <class T> 
+T Queue<T>::Front() {
+  return m_head->GetData();
+}
+
+//Returns the data of the back of the queue
+template <class T>
+bool Queue<T>::IsEmpty() {
+  return (m_size == 0);
+}
+
+//Returns the size of the queue
+template <class T>
+int Queue<T>::GetSize() {
+  return m_size;
+}
+
+//Finds the index of the value in the queue
+template <class T> 
+int Queue<T>::Find(T value) {
+  int index = 0;
+  Node<T>* curr = m_head;
+  while(curr != nullptr) {
+    //Returns the index if the data of the node is equal to the value
+    if(curr->GetData() == value) {
+      return index;
+    }
+    curr = curr->GetNext();
+    index++;
+  }
+  return -1;
+}
+
+//Clears the queue
+template <class T> 
+void Queue<T>::Clear() {
+  while(m_head != nullptr) {
+    //Deletes the head node and sets the head to the next node
+    Node<T>* temp = m_head;
+    m_head = m_head->GetNext();
+    delete temp;
+  }
+  m_tail = nullptr;
+  m_size = 0;
+}
+
+//Returns the data of the node at the index
+template <class T>
+T Queue<T>::At(int x) {
+  Node<T>* curr = m_head;
+  int index = 0;
+  while(curr != nullptr && index < x) {
+    //Sets the current node to the next node and increments the index
+    curr = curr -> GetNext();
+    index++;
+  }
+  return curr->GetData();
+}
+
+//Swaps the node at the index with the node before it
+template <class T>
+void Queue<T>::Swap(int index) {
+  if(index <= 0 || index >= m_size || m_size < 2) {
+    return;
+  }
+  //Swaps the head and the second node
+  if(index == 1) {
+    Node<T>* first = m_head;
+    Node<T>* second = first->GetNext();
+    Node<T>* third = second->GetNext();
+    second -> SetNext(first);
+    first -> SetNext(third);
+    m_head = second;
+    //Sets the tail to the first node if the third node is nullptr
+    if (third == nullptr) {
+      m_tail = first;
+    }
+    return;
+  }
+  //Swaps the node at the index with the node before it
+  Node<T>* prevPrev = m_head;
+  for (int i = 0; i < index - 2; i++) {
+    prevPrev = prevPrev->GetNext();
+  }
+  Node<T>* prev = prevPrev->GetNext();
+  Node<T>* curr = prev->GetNext();
+  Node<T>* next = curr->GetNext();
+  prevPrev->SetNext(curr);
+  curr->SetNext(prev);
+  prev->SetNext(next);
+  //Sets the tail to the previous node if the next node is nullptr
+  if (next == nullptr) {
+     m_tail = prev;
+  }
+}
+
+//Sorts the queue using bubble sort
+template <class T>
+void Queue<T>::Sort(){
+  if(m_size < 2) {
+    return;
+  }
+  //Swaps the nodes if the data of the node is less than the data of the node before it
+  for(int i = 0; i < m_size - 1; i++) {
+    for(int j = 1; j < m_size - i; j++) {
+      if (At(j) < At(j - 1)) {
+        Swap(j);
+      }
+    }
+  }
+}
+
+
+#endif

@@ -1,0 +1,50 @@
+[jdixon@linux6 proj1]$ ./proj1
+What is the name of the file?
+wrong.txt
+Failed to open vote file.
+[jdixon@linux6 proj1]$ ./proj1
+What is the name of the file?
+votes1.txt
+Vote Counts:
+       Alice Johnson:   6
+           Bob Smith:   5
+       Charlie Brown:   5
+         Diana Evans:   5
+
+Histogram:
+       Alice Johnson: ******
+           Bob Smith: *****
+       Charlie Brown: *****
+         Diana Evans: *****
+[jdixon@linux6 proj1]$ ./proj1
+What is the name of the file?
+votes2.txt
+Vote Counts:
+          Lina Zhang:   3
+      Aaliyah Hassan:   4
+           Omar Abdi:   3
+      Diego Martinez:   3
+      Grace O'connor:   2
+
+Histogram:
+          Lina Zhang: ***
+      Aaliyah Hassan: ****
+           Omar Abdi: ***
+      Diego Martinez: ***
+      Grace O'connor: **
+[jdixon@linux6 proj1]$ ./proj1
+What is the name of the file?
+votes3.txt
+Vote Counts:
+      Javier Delgado:   48
+    Svetlana Petrova:   40
+         Imani Nwosu:   65
+         Marcus Chen:   30
+    Fatima Al-sayeed:   17
+
+Histogram:
+      Javier Delgado: ************************************************
+    Svetlana Petrova: ****************************************
+         Imani Nwosu: *****************************************************************
+         Marcus Chen: ******************************
+    Fatima Al-sayeed: *****************

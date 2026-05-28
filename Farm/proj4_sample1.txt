@@ -1,0 +1,925 @@
+Welcome to Farm Together Simulator
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+0
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+6
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+How many seasons to simulate?
+-1
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+1
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+0
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+4
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+1
+New Animal added to the farm.
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+2
+New Animal added to the farm.
+New Animal added to the farm.
+New Vegetable added to the farm.
+New Vegetable added to the farm.
+New Tree added to the farm.
+New Tree added to the farm.
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+1
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+2
+New Vegetable added to the farm.
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+1
+SEASON: 1
+**** Farm Status ****
+Food: 3
+Money: 0
+Season: 1
+Agricultural Items: 
+Animal | Chicken | Not Harvestable | Infant | Fed
+Animal | Chicken | Not Harvestable | Infant | Fed
+Animal | Chicken | Not Harvestable | Infant | Fed
+Vegetable | Not Harvestable | Medium
+Vegetable | Not Harvestable | Medium
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Vegetable | Not Harvestable | Medium
+
+SEASON: 2
+**** Farm Status ****
+Food: 0
+Money: 0
+Season: 2
+Agricultural Items: 
+Animal | Chicken | Not Harvestable | Juvenile | Fed
+Animal | Chicken | Not Harvestable | Juvenile | Fed
+Animal | Chicken | Not Harvestable | Juvenile | Fed
+Vegetable | Not Harvestable | Fully Mature
+Vegetable | Not Harvestable | Fully Mature
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Vegetable | Not Harvestable | Fully Mature
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+1
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+2
+New Vegetable added to the farm.
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+1
+SEASON: 3
+The Vegetable was harvested
+The Vegetable was harvested
+The Vegetable was harvested
+**** Farm Status ****
+Food: 6
+Money: 0
+Season: 3
+Agricultural Items: 
+Animal | Chicken | Not Harvestable | Juvenile | Hungry
+Animal | Chicken | Not Harvestable | Juvenile | Hungry
+Animal | Chicken | Not Harvestable | Juvenile | Hungry
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Vegetable | Not Harvestable | Medium
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+1
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+2
+New Vegetable added to the farm.
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+1
+SEASON: 4
+**** Farm Status ****
+Food: 3
+Money: 0
+Season: 4
+Agricultural Items: 
+Animal | Chicken | Not Harvestable | Adult | Fed
+Animal | Chicken | Not Harvestable | Adult | Fed
+Animal | Chicken | Not Harvestable | Adult | Fed
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Tree  | Sapling | Not Harvestable | Not Fruiting
+Vegetable | Not Harvestable | Fully Mature
+Vegetable | Not Harvestable | Medium
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+1
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+2
+New Vegetable added to the farm.
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+1
+SEASON: 5
+The Animal was harvested
+The Animal was harvested
+The Animal was harvested
+The Vegetable was harvested
+**** Farm Status ****
+Food: 5
+Money: 9
+Season: 5
+Agricultural Items: 
+Tree  | Pole | Not Harvestable | Not Fruiting
+Tree  | Pole | Not Harvestable | Not Fruiting
+Vegetable | Not Harvestable | Fully Mature
+Vegetable | Not Harvestable | Medium
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+1
+Which agricultural item are you interested in?
+1. Animal
+2. Vegetable
+3. Tree
+2
+New Vegetable added to the farm.
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+1
+SEASON: 6
+The Vegetable was harvested
+**** Farm Status ****
+Food: 7
+Money: 9
+Season: 6
+Agricultural Items: 
+Tree  | Pole | Not Harvestable | Not Fruiting
+Tree  | Pole | Not Harvestable | Not Fruiting
+Vegetable | Not Harvestable | Fully Mature
+Vegetable | Not Harvestable | Medium
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+10
+SEASON: 7
+The Vegetable was harvested
+**** Farm Status ****
+Food: 9
+Money: 9
+Season: 7
+Agricultural Items: 
+Tree  | Pole | Not Harvestable | Not Fruiting
+Tree  | Pole | Not Harvestable | Not Fruiting
+Vegetable | Not Harvestable | Fully Mature
+
+SEASON: 8
+The Vegetable was harvested
+**** Farm Status ****
+Food: 11
+Money: 9
+Season: 8
+Agricultural Items: 
+Tree  | Pole | Not Harvestable | Not Fruiting
+Tree  | Pole | Not Harvestable | Not Fruiting
+
+SEASON: 9
+**** Farm Status ****
+Food: 11
+Money: 9
+Season: 9
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Not Fruiting
+Tree  | Mature | Not Harvestable | Not Fruiting
+
+SEASON: 10
+**** Farm Status ****
+Food: 11
+Money: 9
+Season: 10
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Not Fruiting
+Tree  | Mature | Not Harvestable | Not Fruiting
+
+SEASON: 11
+**** Farm Status ****
+Food: 11
+Money: 9
+Season: 11
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Not Fruiting
+Tree  | Mature | Not Harvestable | Not Fruiting
+
+SEASON: 12
+**** Farm Status ****
+Food: 11
+Money: 9
+Season: 12
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Not Fruiting
+Tree  | Mature | Not Harvestable | Not Fruiting
+
+SEASON: 13
+**** Farm Status ****
+Food: 11
+Money: 9
+Season: 13
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 14
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 13
+Money: 9
+Season: 14
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 15
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 15
+Money: 9
+Season: 15
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 16
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 17
+Money: 9
+Season: 16
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+10
+SEASON: 17
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 19
+Money: 9
+Season: 17
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 18
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 21
+Money: 9
+Season: 18
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 19
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 23
+Money: 9
+Season: 19
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 20
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 25
+Money: 9
+Season: 20
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 21
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 27
+Money: 9
+Season: 21
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 22
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 29
+Money: 9
+Season: 22
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 23
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 31
+Money: 9
+Season: 23
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 24
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 33
+Money: 9
+Season: 24
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 25
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 35
+Money: 9
+Season: 25
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 26
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 37
+Money: 9
+Season: 26
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+10
+SEASON: 27
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 39
+Money: 9
+Season: 27
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 28
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 41
+Money: 9
+Season: 28
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 29
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 43
+Money: 9
+Season: 29
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 30
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 45
+Money: 9
+Season: 30
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 31
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 47
+Money: 9
+Season: 31
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 32
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 49
+Money: 9
+Season: 32
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 33
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 51
+Money: 9
+Season: 33
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 34
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 53
+Money: 9
+Season: 34
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 35
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 55
+Money: 9
+Season: 35
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 36
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 57
+Money: 9
+Season: 36
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+10
+SEASON: 37
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 59
+Money: 9
+Season: 37
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 38
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 61
+Money: 9
+Season: 38
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 39
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 63
+Money: 9
+Season: 39
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 40
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 65
+Money: 9
+Season: 40
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 41
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 67
+Money: 9
+Season: 41
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 42
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 69
+Money: 9
+Season: 42
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 43
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 71
+Money: 9
+Season: 43
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 44
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 73
+Money: 9
+Season: 44
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 45
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 75
+Money: 9
+Season: 45
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 46
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 77
+Money: 9
+Season: 46
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+10
+SEASON: 47
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 79
+Money: 9
+Season: 47
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 48
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 81
+Money: 9
+Season: 48
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 49
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 83
+Money: 9
+Season: 49
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 50
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 85
+Money: 9
+Season: 50
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 51
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 87
+Money: 9
+Season: 51
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 52
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 89
+Money: 9
+Season: 52
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 53
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 91
+Money: 9
+Season: 53
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 54
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 93
+Money: 9
+Season: 54
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 55
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 95
+Money: 9
+Season: 55
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 56
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 97
+Money: 9
+Season: 56
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+3
+How many seasons to simulate?
+10
+SEASON: 57
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 99
+Money: 9
+Season: 57
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 58
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 101
+Money: 9
+Season: 58
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 59
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 103
+Money: 9
+Season: 59
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 60
+Fruit was harvested!
+Fruit was harvested!
+**** Farm Status ****
+Food: 105
+Money: 9
+Season: 60
+Agricultural Items: 
+Tree  | Mature | Not Harvestable | Fruiting
+Tree  | Mature | Not Harvestable | Fruiting
+
+SEASON: 61
+Fruit was harvested!
+The Tree was harvested
+Fruit was harvested!
+The Tree was harvested
+**** Farm Status ****
+Food: 107
+Money: 9
+Season: 61
+Agricultural Items: 
+None
+
+SEASON: 62
+The farm is empty
+**** Farm Status ****
+Food: 107
+Money: 9
+Season: 62
+Agricultural Items: 
+None
+
+SEASON: 63
+The farm is empty
+**** Farm Status ****
+Food: 107
+Money: 9
+Season: 63
+Agricultural Items: 
+None
+
+SEASON: 64
+The farm is empty
+**** Farm Status ****
+Food: 107
+Money: 9
+Season: 64
+Agricultural Items: 
+None
+
+SEASON: 65
+The farm is empty
+**** Farm Status ****
+Food: 107
+Money: 9
+Season: 65
+Agricultural Items: 
+None
+
+SEASON: 66
+The farm is empty
+**** Farm Status ****
+Food: 107
+Money: 9
+Season: 66
+Agricultural Items: 
+None
+1. Add Item to Farm
+2. Add Two of Each Item to Farm
+3. Simulate Time
+4. Farm Status
+5. Quit
+5
+Thank you for simulating Farm Together!
